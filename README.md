@@ -1,8 +1,9 @@
 How it looks like
 ------------
 
-![Image of application]
-(https://raw.githubusercontent.com/innerdev/imagespark_test_task/master/screenshot.png)
+![Screenshot of application](https://raw.githubusercontent.com/innerdev/imagespark_test_task/master/screenshot.png "Screenshot of application")
+
+And yes, we have small REST API. Please, continue to read this manual.
 
 Installation
 ------
@@ -59,6 +60,35 @@ $ php artisan serve --port=8085
 
 That should be enough and everything should work just fine.
 Try to open ```http://127.0.0.1:8085``` in your web-browser.
+
+Usage
+----
+
+**Web-interface:**
+
+Open root URI (```/```) to view web-interface of the application. It's just a simple searching form with Bootstrap.
+This should be intuitive.
+
+
+**API:**
+
+API URI's going down here, you can open it in your web-browser, for example:
+
+```shell script
+/api/users
+```
+Sends full list of existing users.
+
+```shell script
+/users/name/{name}
+```
+Search user by name, where ```{name}``` can be any string.
+
+```shell script
+/users/name/{name}/city/{city_name}
+```
+Search user by name and city name, where ```{name}``` and ```{city}``` can be any string.
+
 
 Owner's task description:
 ------------

@@ -1,7 +1,8 @@
 How it looks like
 ------------
 
-[img=]
+![Image of application]
+(https://raw.githubusercontent.com/innerdev/imagespark_test_task/master/screenshot.png)
 
 Installation
 ------
@@ -11,13 +12,55 @@ You need MySQL (application was written with MySQL 8.0.19), PHP >= 7.2, NodeJS &
 Clone the project somewhere:
 
 ```shell script
-mkdir ~/imagespark_test_task
-cd ~/imagespark_test_task
-clone ??? 
+$ mkdir ~/imagespark_test_task
+$ cd ~/imagespark_test_task
+$ git clone https://github.com/innerdev/imagespark_test_task.git 
 ```
 
+Create two MySQL databases, copy ```.env.example``` into ```.env``` inside root directory:
 
-Task description:
+```shell script
+$ cd ~/imagespark_test_task/imagespark_test_task
+$ cp .env.example .env
+```
+
+And change the following lines if needed (pay attention to database names and login / password):
+
+```shell script
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=main_database_name
+DB_DATABASE_TESTING=testing_database_name
+DB_USERNAME=user_database_username
+DB_PASSWORD=user_password
+```
+
+We need MySQL database for unit testing, because:
+1) As I think it's good when you have same environment for testing and production
+2) SQLITE database, that is usually used for testing purposes, doesn't support REGEXP (needed in this application) 
+
+Next steps is to set up the application, migrate and seed database, compile CSS and JS (needed for Bootstrap support). Run from the project root following command:
+
+```shell script
+$ composer update
+$ npm install
+$ npm run prod
+$ php artisan migrate
+$ php artisan db:seed
+$ php artisan key:generate
+```
+
+Now let's start built-in web-server:
+
+```shell script
+$ php artisan serve --port=8085
+```
+
+That should be enough and everything should work just fine.
+Try to open ```http://127.0.0.1:8085``` in your web-browser.
+
+Owner's task description:
 ------------
 
 Разработать приложение по управлению пользователями.

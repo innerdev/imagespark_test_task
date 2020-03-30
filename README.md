@@ -89,6 +89,16 @@ Search user by name, where ```{name}``` can be any string.
 ```
 Search user by name and city name, where ```{name}``` and ```{city}``` can be any string.
 
+Interesting parts
+-------------
+This is pretty regular application, but something interesting you can find here:
+
+```shell script
+App\Models\User class
+scopeWithName method
+```
+(allows you to search user by different columns in database with only one input string)
+
 
 Owner's task description:
 ------------

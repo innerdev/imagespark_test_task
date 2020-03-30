@@ -1,0 +1,17 @@
+@import '~bootstrap/scss/bootstrap';
+
+.main_container {
+    margin-top: 25px;
+}
+
+form {
+    margin-bottom: 25px;
+}
+
+form button {
+    margin-top: 10px;
+}
+
+form button[type=button] {
+    margin-left: 10px;
+}

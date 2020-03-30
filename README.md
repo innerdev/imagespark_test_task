@@ -80,7 +80,7 @@ API URI's going down here, you can open it in your web-browser, for example:
 Sends full list of existing users.
 
 ```shell script
-/api/users/name/sample_name
+/api/users/name/{name}
 ```
 Search user by name, where ```{name}``` can be any string.
 
